@@ -1,0 +1,26 @@
+
+const html = document.getElementById('html');
+const css = document.getElementById('css');
+const javascript = document.getElementById('javascript');
+
+const code = document.getElementById('code').contentWindow.document;
+
+const compile = ()=>{
+    document.body.onkeyup = function(){
+        code.open();
+        code.writeln(
+            html.value + 
+            "<style>" + 
+            css.value + 
+            "</style" + 
+            "<script>" +
+             javascript.value + 
+             "</script>"
+        );
+        code.close();
+    };
+};
+compile();
+
+
+
